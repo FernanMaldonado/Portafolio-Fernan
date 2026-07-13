@@ -1,0 +1,100 @@
+/* Estilos generales */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px; 
+}
+
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* RESPONSIVE: Cuando la pantalla mide menos de 768px */
+@media (max-width: 868px) {
+    .menu-toggle {
+        display: block; /* Aparece el botón */
+    }
+
+    .nav-links {
+        display: none; /* Oculta el menú por defecto en móvil */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        background: #333;
+    }
+
+    .nav-links.open {
+        display: flex; 
+    }
+}
+
+.logo h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font: oblique bold 120% cursive;
+    padding-left: 15px;
+}
+
+/* --- Estilos base (Móvil primero) --- */
+.nav-links {
+    display: none; /* Por defecto, oculto para móvil */
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.nav-links.open {
+    display: flex; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 135px;
+    background: #333;
+    padding: 25px 0;
+    text-align: center;
+    border-radius: 10%;
+}
+
+/* --- Pantallas grandes (Escritorio) --- */
+@media (min-width: 869px) {
+    .nav-links {
+        display: flex; /* Aquí sí se muestra en línea */
+        flex-direction: row;
+        position: static;
+        background: transparent;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* --- Ajustes para el móvil --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color .3s;
+}
+
+.nav-links a:hover {
+    color: #3d5891;
+}
