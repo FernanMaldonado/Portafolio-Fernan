@@ -1,0 +1,84 @@
+
+.Cuadro {
+    display: flex;             
+    align-items: center;      
+    justify-content: center;   
+    gap: 0;                  
+    min-height: 100vh;
+    padding: 0 50px;           
+}   
+
+.content {
+    width: 35%;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 55%;
+    padding-top: 0;
+    width: 50%;
+
+}
+
+.content p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+@media (max-width: 1250px) {
+    .Cuadro {
+        align-items: flex-start; 
+        padding-top: 20px;
+        flex-direction: column;
+    }
+    .content {
+        position: absolute;
+        top: 15%;
+        width: 85%;              /* Un poco más ancho para que se vea mejor */
+        margin-left: 0%;       /* Centra el contenedor si es necesario */
+        margin-right: 5%;
+    }
+    .contenedor-disperso {
+        display: none;
+    }
+}
+
+.BTN {
+    margin-top: 20px;       /* Espacio entre el párrafo y el botón */
+    padding: 10px 25px;     /* Tamaño del botón */
+    background-color: #004bee; /* Color azul que usas en el hover de tus enlaces */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 75px;
+    height: auto;
+    text-align: center;
+    text-decoration: aliceblue;
+}
+
+.BTN:hover {
+    background-color: #2a3d66; /* Un azul más oscuro al pasar el mouse */
+}
+
+.contenedor-disperso {
+    position: absolute;
+    margin-right: 10%;
+    width: 45%;
+    height: 600px;  
+    overflow: hidden;  
+    right: 0; 
+}
+
+.Cube-absoluto {
+    position: absolute; /* Esto permite moverlos a cualquier coordenada */
+    width: 300px;
+    height: 300px;
+    transition: transform 0.5s ease;
+}
+
+.Cube-absoluto:hover {
+    z-index: 10;        /* Al pasar el mouse, el cubo se pone al frente */
+    transform: scale(1.1);
+}
