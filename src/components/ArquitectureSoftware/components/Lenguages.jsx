@@ -14,14 +14,14 @@ const Lenguages = () => {
             id: 1,
             name: "Java",
             img: Java,
-            level: 100,
+            level: 85,
             description: "Especialista en desarrollo backend robusto y escalable, aplicando patrones de diseño para sistemas empresariales de alto rendimiento."
         },
         {
             id: 2,
             name: "JavaScript",
             img: JavaScript,
-            level: 100,
+            level: 90,
             description: "Dominio avanzado de ecosistemas web modernos (ES6+), enfocado en la creación de interfaces dinámicas y lógica asíncrona de alto impacto."
         },
         {
@@ -68,16 +68,27 @@ const Lenguages = () => {
                                 <p style={{ fontSize: "0.9rem", marginBottom: "5px" }}>{lenguaje.description}</p>
 
                                 {/* GRÁFICA CIRCULAR */}
-                                <div style={{ width: "50%", height:"50%"}}>
-                                    <CircularProgressbar
-                                        value={lenguaje.level}
-                                        text={`${lenguaje.level}%`}
-                                        styles={buildStyles({
-                                            pathColor: `#4CAF50`,
-                                            textColor: '#000000',
-                                            trailColor: '#d6d6d6'
-                                        })}
-                                    />
+                                <div className="porcentage">
+                                    <div className="progress-container">
+                                        <div
+                                            className="progress-bar"
+                                            style={{
+                                                "--progress": `${lenguaje.level}%`,
+                                            }}
+                                        ></div>
+
+                                        <div className="progress-text">
+                                            {lenguaje.level}%
+                                        </div>
+
+                                        <div className="particles">
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

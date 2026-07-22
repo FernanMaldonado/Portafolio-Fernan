@@ -7,35 +7,40 @@ import SpringBoot from "../../../assets/icons/SpringBoot.png";
 import ReactNative from "../../../assets/icons/ReactNative.png";
 
 const Frameworks = () => {
-    const dataLenguajes = [
+    const dataFrameworks = [
         { 
             id: 1, 
             name: "React", 
             img: Reacts, 
+            level:75,
             description: "Desarrollo interfaces web interactivas y escalables mediante una arquitectura basada en componentes, optimizando la experiencia de usuario." 
         },
         { 
             id: 2, 
             name: "Node.js", 
             img: Nodejs, 
+            level:90,
             description: "Construyo servicios backend eficientes y de alto tráfico, utilizando arquitectura asíncrona para APIs en tiempo real." 
         },
         { 
             id: 3, 
             name: ".NET", 
             img: NETs, 
+            level:95,
             description: "Diseño e implemento soluciones empresariales robustas y seguras, aprovechando la potencia del ecosistema .NET para backend." 
         },
         { 
             id: 4, 
             name: "Spring Boot", 
             img: SpringBoot, 
+            level:85,
             description: "Desarrollo microservicios modulares y de despliegue rápido, garantizando mantenibilidad y escalabilidad en sistemas Java." 
         },
         { 
             id: 5, 
             name: "React - Native", 
             img: ReactNative, 
+            level:75,
             description: "Implemento aplicaciones móviles nativas multiplataforma desde un único código base, garantizando rendimiento y consistencia." 
         },
     ];
@@ -47,16 +52,38 @@ const Frameworks = () => {
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container-fr">
-                {dataLenguajes.map((lenguaje) => (
-                    <div className="Specify-fr" key={lenguaje.id}> 
+                {dataFrameworks.map((framework) => (
+                    <div className="Specify-fr" key={framework.id}> 
                         <div className="Specify-inner-fr">
                             <div className="Specify-front-fr">
-                                <div className="sub-title-fr">{lenguaje.name}</div>
-                                <img style={{ width: "50%", height: "50%"}} src={lenguaje.img} alt={lenguaje.name} />
+                                <div className="sub-title-fr">{framework.name}</div>
+                                <img style={{ width: "50%", height: "50%"}} src={framework.img} alt={framework.name} />
                             </div>
                             <div className="Specify-back-fr">
-                                <h3>{lenguaje.name}</h3>
-                                <p>{lenguaje.description}</p>
+                                <h3>{framework.name}</h3>
+                                <p>{framework.description}</p>
+                                 <div className="porcentage-fr">
+                                    <div className="progress-container-fr">
+                                        <div
+                                            className="progress-bar-fr"
+                                            style={{
+                                                "--progress": `${framework.level}%`,
+                                            }}
+                                        ></div>
+
+                                        <div className="progress-text-fr">
+                                            {framework.level}%
+                                        </div>
+
+                                        <div className="particles">
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                            <div className="particle"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
