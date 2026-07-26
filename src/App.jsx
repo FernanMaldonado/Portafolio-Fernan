@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/components/Navbar";
 import Hero from "./components/Hero/components/Hero";
+import Me from "./components/Hero/components/Me.jsx";
 import Footer from "./components/Footer/components/Footer";
 import Lenguages from "./components/ArquitectureSoftware/components/Lenguages.jsx"
 import Frameworks from "./components/ArquitectureSoftware/components/Frameworks.jsx"
@@ -8,7 +9,15 @@ import BataBaseRelationalAndNorRelationals from "./components/ArquitectureSoftwa
 import DevOps from "./components/ArquitectureSoftware/components/DevOps.jsx"
 import Arquitecture from "./components/ArquitectureSoftware/components/Arquitecture.jsx"
 import About from "./components/About/components/About.jsx";
-import Options, { OptionsSecond } from "./components/Options/components/Options.jsx"
+import DegradientUno from "./components/Degradient/components/Degradient.jsx";
+import { DegradientDos } from "./components/Degradient/components/Degradient.jsx";
+import { DegradientTres } from "./components/Degradient/components/Degradient.jsx";
+import { DegradientCuatro } from "./components/Degradient/components/Degradient.jsx";
+import { DegradientCinco } from "./components/Degradient/components/Degradient.jsx";
+import { DegradientSeis } from "./components/Degradient/components/Degradient.jsx";
+import GitHubProjects from "./components/Projects/components/GitHubProjects.jsx"
+import  Skills  from "./components/Habilities/components/Habilities.jsx"
+import  Contact from "./components/Contact/Contact.jsx"
 import "./App.css";
 
 function App() {
@@ -18,41 +27,58 @@ function App() {
 
             <Routes>
                 <Route
-                    path="/Inicio"
+                    path="/About"
                     element={
                         <>
-                            <div id="inicio">
-                                <Hero />
+                            <div id="about">
+                                <About />
                             </div>
-
-                            <Options />
-                            <OptionsSecond/>
-
+                            <DegradientUno/>
 
                             <div id="frameworks">
                                 <Frameworks />
                             </div>
+                            <DegradientDos/>
 
                             <div id="database">
                                 <BataBaseRelationalAndNorRelationals />
                             </div>
 
+                            <DegradientTres/>
+
                             <div id="lenguajes">
                                 <Lenguages />
                             </div>
+
+                            <DegradientCuatro/>
 
                             <div id="devOps">
                                 <DevOps />
                             </div>
 
+                            <DegradientCinco/>
+
                             <div id="arquitecture">
                                 <Arquitecture />
                             </div>
+
+                            <DegradientSeis/>
                         </>
                     }
                 />
 
-                <Route path="/about" element={<About />} />
+                <Route path="/inicio" element={<><Hero />
+                    <Me/></>
+                    } />
+                <Route path="/Projects" element={<><GitHubProjects />
+                    </>
+                    } />
+                <Route path="/Skills" element={<><Skills />
+                    </>
+                    } />
+                <Route path="/Contact" element={<><Contact />
+                    </>
+                    } />
             </Routes>
 
             <Footer /> 
