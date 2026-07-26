@@ -53,7 +53,6 @@ function Hero() {
 
     return (
         <section id="hero" className='Cuadro'>
-            <div className='space'></div>
             <div className='contenth'>
                 <div ref={ref}>
                     {animate && (
@@ -79,6 +78,7 @@ function Hero() {
                         speed={55}
                         cursor
                         repeat={0}
+                        className="parraf-h"
                     />
                 )}
 

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     height:  100vh;
-    padding: 0 80px;
+    padding: 0 20px;
     gap: 20px;
 }
 
@@ -19,16 +19,12 @@
     white-space: nowrap;
 }
 
-.space {
-    position: relative;
-    width: 50px;
-    height: 75%;
-}
-
 .contenth {
     flex: 1;
-    max-width: 50%;
+    max-width:
+    100%;
     line-height: 2;
+    padding-top: 80px;
 }
 
 .contenedor-disperso {
@@ -52,9 +48,9 @@
         padding-top: 20px;
         flex-direction: column;
     }
-    .content {
+    .contenth  {
         position: absolute;
-        top: 15%;
+        top: 5%;
         width: 85%;              /* Un poco más ancho para que se vea mejor */
         margin-left: 0%;       /* Centra el contenedor si es necesario */
         margin-right: 5%;
