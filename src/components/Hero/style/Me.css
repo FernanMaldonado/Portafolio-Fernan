@@ -1,0 +1,302 @@
+.Me {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 105vh;
+    padding: 0 40px;
+    background-color: #fff;
+    overflow: visible;
+    flex-direction: column;
+    padding-top: -5px;
+}
+
+.Me img.Mee {
+    height: 700px;
+    width: auto;
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* Botones principales flotantes */
+.floating-item {
+    position: absolute;
+    z-index: 10;
+}
+
+.main-pill {
+    background: #020202ad;
+    border: 2px solid #cbd5e1;
+    padding: 12px 24px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-weight: 600;
+    color: #1e293b;
+    position: relative;
+    z-index: 2;
+}
+
+.floating-item:hover .main-pill {
+    border-color: #000000;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15);
+}
+
+/* LADO IZQUIERDO */
+.skills-item    { top: 30%; left: 32%; } /* Habilidades */
+.lengua-item    { top: 48%; left: 28%; } /* Lenguajes */
+.fra-item       { top: 65%; left: 28%; } /* Frameworks */
+
+/* LADO DERECHO */
+.base-item      { top: 30%; right: 35%; } /* Bases de datos */
+.projects-item  { top: 82%; left: 35%; } /* Proyectos */
+.arch-item      { top: 50%; right: 25%; } /* Arquitectura */
+.contact-item   { top: 82%; right: 30%; } /* Contacto (Abajo centro) */
+.habilities-item{ top: 68%; right: 28%; } /* Habilidades extra (Arriba centro) */
+
+/* --- CONTENEDOR DE RAMAS --- */
+.subitems-wrapper {
+    position: absolute;
+    top: 50%;
+    width: 0; 
+    height: 0;
+    z-index: 1;
+}
+
+.branch-right { left: 100%; }
+.branch-left { right: 100%; }
+
+/* --- ANIMACIÓN DE LAS LÍNEAS --- */
+.line-wrapper {
+    position: absolute;
+    top: 0;
+    height: 2px;
+}
+
+.line-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transform: scaleX(0); /* Empieza invisible */
+    animation: drawLine 0.3s ease-out forwards;
+}
+
+@keyframes drawLine {
+    to { transform: scaleX(1); }
+}
+
+/* Direcciones y ángulos de las líneas */
+.branch-right .line-wrapper { right: 200px; transform-origin: right center; }
+.branch-right .sub-0 .line-wrapper { width: 95px; transform: rotate(35deg); }
+.branch-right .sub-1 .line-wrapper { width: 85px;  transform: rotate(0deg); }
+.branch-right .sub-2 .line-wrapper { width: 95px; transform: rotate(-35deg); }
+
+.branch-left .line-wrapper { left: 175px; transform-origin: left center; }
+.branch-left .sub-0 .line-wrapper { width: 95px; transform: rotate(-35deg); } /* Sube a la izquierda */
+.branch-left .sub-1 .line-wrapper { width: 75px;  transform: rotate(0deg); }
+.branch-left .sub-2 .line-wrapper { width: 95px; transform: rotate(35deg); } /* Baja a la izquierda */
+
+/* Necesario para que la línea crezca desde su base correcta */
+.branch-right .line-fill { transform-origin: right center; }
+.branch-left .line-fill { transform-origin: left center; }
+
+/* --- ANIMACIÓN DE LOS CUADRITOS SECUNDARIOS --- */
+.subitem-box {
+    position: absolute;
+    background: #003f7e;
+    border: 2px solid #000000;
+    color: #1e293b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;    
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: scale(0.5);
+    /* El cuadrito espera 0.25s (mientras se dibuja la línea) para aparecer */
+    animation: popBox 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 0.25s; 
+}
+
+.subitem-box:hover {
+    background:     #262635b7;
+    color: #fff;
+}
+
+@keyframes popBox {
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Posición exacta de los cuadritos al final de cada línea */
+.branch-right .sub-0 .subitem-box { top: -75px; right: 290px; }
+.branch-right .sub-1 .subitem-box { top: -18px; right: 300px; }
+.branch-right .sub-2 .subitem-box { top: 38px; right: 290px; }
+
+.branch-left .sub-0 .subitem-box { top: -85px; left: 270px; }
+.branch-left .sub-1 .subitem-box { top: -18px; left: 270px; }
+.branch-left .sub-2 .subitem-box { top: 45px; left: 260px; }
+
+/* Extremo superior */
+.branch-left-ar .sub-3 .subitem-box { top: -160px; left: 20vw; }
+
+/* Medio superior */
+.branch-left-ar .sub-0 .subitem-box { top: -100px; left: 22vw; }
+
+/* Centro superior */
+.branch-left-ar .sub-1 .subitem-box { top: -40px; left: 23vw; }
+
+/* Centro inferior */
+.branch-left-ar .sub-2 .subitem-box { top: 20px; left: 23vw; }
+
+/* Medio inferior */
+.branch-left-ar .sub-5 .subitem-box { top: 80px; left: 22vw; }
+
+/* Extremo inferior */
+.branch-left-ar .sub-4 .subitem-box { top: 140px; left: 20vw; }
+
+.branch-left-ar .line-wrapper { left: 300px; transform-origin: left center; }
+.branch-left-ar .sub-0 .line-wrapper { width: 125px; transform: rotate(-40deg); } 
+.branch-left-ar .sub-1 .line-wrapper { width: 115px;  transform: rotate(-20deg); }
+.branch-left-ar .sub-2 .line-wrapper { width: 135px; transform: rotate(-5deg); } 
+.branch-left-ar .sub-3 .line-wrapper { width: 135px; transform: rotate(5deg); } 
+.branch-left-ar .sub-4 .line-wrapper { width: 115px;  transform: rotate(20deg); }
+.branch-left-ar .sub-5 .line-wrapper { width: 125px; transform: rotate(40deg); } 
+
+.branch-left-ar .line-fill { transform-origin: left center; }
+
+/*----------------------------------------------------------------------*/
+
+/* Extremo superior */
+.branch-left-con .sub-3 .subitem-box { top: -100px; left: 250px; }
+
+/* Medio superior */
+.branch-left-con .sub-0 .subitem-box { top: 30px; left: 280px; }
+
+/* Centro superior */
+.branch-left-con .sub-1 .subitem-box { top: -40px; left: 280px; }
+
+/* Centro inferior */
+.branch-left-con .sub-2 .subitem-box { top: 80px; left: 250px; }
+
+.branch-left-con .line-wrapper { left: 175px; transform-origin: left center; }
+.branch-left-con .sub-0 .line-wrapper { width: 95px; transform: rotate(-40deg); } /* Sube a la izquierda */
+.branch-left-con .sub-1 .line-wrapper { width: 100px;  transform: rotate(-12deg); }
+.branch-left-con .sub-2 .line-wrapper { width: 95px; transform: rotate(20deg); } /* Baja a la izquierda */
+.branch-left-con .sub-3 .line-wrapper { width: 95px; transform: rotate(40deg); } /* Baja a la izquierda */
+
+.branch-left-con .line-fill { transform-origin: left center; }
+
+
+/* --- VENTANA MODAL GRANDE --- */
+.info-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.info-modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-top: 6px solid #4f46e5;
+}
+
+.info-modal-content h2 { margin-top: 0; color: #1e293b; font-size: 22px; }
+.info-modal-content p { color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+.close-modal:hover { color: #1e293b; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.detras {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: transparent;
+    -webkit-text-stroke: 2px #000000;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 1250px) {
+    /* 1. Reducimos un poco el tamaño de la imagen central para dar más espacio lateral */
+    .Me img.Mee {
+        height: 550px;
+    }
+
+    /* 2. Reubicamos las cápsulas principales hacia los extremos */
+    .skills-item { top: 20%; left: 20%; }
+    .projects-item { top: 25%; left: 20%; }
+    .contact-item { top: 30%; left: 20%; }
+    .habilities-item { top: 35%; left: 20%; }
+    .fra-item { top: 40%; left: 20%; }
+    .lengua-item { top: 45%; left: 20%; }
+    .base-item { top: 50%; left: 20%; }  
+    .arch-item { top: 55%; left: 20%; }
+
+    /* 3. Ajustamos ligeramente el arco izquierdo de 6 elementos para que no se desborde */
+    .branch-left-ar .sub-3 .subitem-box { top: -130px; left: 210px; }
+    .branch-left-ar .sub-0 .subitem-box { top: -75px;  left: 230px; }
+    .branch-left-ar .sub-1 .subitem-box { top: -25px;  left: 280px; }
+    .branch-left-ar .sub-2 .subitem-box { top: 25px;   left: 280px; }
+    .branch-left-ar .sub-5 .subitem-box { top: 75px;   left: 230px; }
+    .branch-left-ar .sub-4 .subitem-box { top: 130px;  left: 210px; }
+}
+
+.modal-video{
+    width: 100%;
+    max-width: 380px;   /* Ancho similar al de un celular */
+    aspect-ratio: 9 / 16;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    margin: 15px auto;
+    display: block;
+    background: #000;
+}
+
+.modal-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #6c63ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.modal-link:hover {
+    background: #574bdb;
+    transform: translateY(-2px);
+}
