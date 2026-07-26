@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/components/Navbar";
 import Hero from "./components/Hero/components/Hero";
 import Me from "./components/Hero/components/Me.jsx";
@@ -43,6 +43,7 @@ function App() {
             <Navbar /> 
 
             <Routes>
+                <Route path="/" element={<Navigate to="/inicio" replace />} />
                 <Route
                     path="/About"
                     element={
