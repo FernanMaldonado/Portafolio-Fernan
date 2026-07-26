@@ -7,36 +7,59 @@ import Github from "../../../assets/icons/Github.png";
 import Cloudinary from "../../../assets/icons/Cloudinary.png";
 
 const DevOps = () => {
-    const dataHerramientas = [
-        {
-            id: 1,
-            name: "Docker",
-            img: Docker,
-            level: 75,
-            description: "Contenerizo mis aplicaciones para garantizar entornos de desarrollo consistentes, facilitando su despliegue en cualquier servidor."
-        },
-        {
-            id: 2,
-            name: "Git",
-            img: Git,
-            level: 90,
-            description: "Gestiono el control de versiones de mi código, permitiéndome un flujo de trabajo organizado y colaborativo en todos mis proyectos."
-        },
-        {
-            id: 3,
-            name: "Github",
-            img: Github,
-            level: 85,
-            description: "Documento y almaceno mis repositorios, facilitando la integración continua y el trabajo en equipo con estándares de la industria."
-        },
-        {
-            id: 4,
-            name: "Cloudinary",
-            img: Cloudinary,
-            level: 75,
-            description: "Optimizo y gestiono la entrega de activos multimedia, mejorando la velocidad de carga y la eficiencia de mis aplicaciones."
-        },
-    ];
+
+    const Parraf = () => {
+    return (
+        <div className="Parraf-container">
+            <p>
+                A lo largo de mi formación como desarrollador he trabajado con diferentes 
+                herramientas que me permiten mejorar la calidad, organización y eficiencia 
+                en el ciclo de desarrollo de software. Manejo tecnologías como 
+                <strong> Docker</strong>, utilizada para la creación de entornos 
+                contenerizados y despliegues consistentes; <strong>Git</strong>, para el 
+                control de versiones y administración eficiente del código fuente; 
+                <strong> GitHub</strong>, como plataforma para gestionar repositorios, 
+                colaborar en proyectos y aplicar flujos de trabajo profesionales; y 
+                <strong> Cloudinary</strong>, para la gestión, optimización y distribución 
+                de recursos multimedia dentro de aplicaciones modernas. Estas herramientas 
+                forman parte de mi flujo de trabajo diario, permitiéndome desarrollar 
+                proyectos más organizados, escalables y preparados para entornos reales de 
+                producción.
+            </p>
+        </div>
+    )
+};
+
+const dataHerramientas = [
+    {
+        id: 1,
+        name: "Docker",
+        img: Docker,
+        level: 75,
+        description: "Implemento contenedores para crear entornos de desarrollo reproducibles, facilitando la configuración, despliegue y escalabilidad de aplicaciones."
+    },
+    {
+        id: 2,
+        name: "Git",
+        img: Git,
+        level: 90,
+        description: "Gestiono el control de versiones mediante buenas prácticas, permitiendo organizar cambios, mantener historial y trabajar de forma colaborativa."
+    },
+    {
+        id: 3,
+        name: "GitHub",
+        img: Github,
+        level: 85,
+        description: "Administro repositorios de código aplicando flujos colaborativos, documentación técnica e integración con herramientas modernas de desarrollo."
+    },
+    {
+        id: 4,
+        name: "Cloudinary",
+        img: Cloudinary,
+        level: 75,
+        description: "Gestiono recursos multimedia en la nube, optimizando imágenes y archivos para mejorar el rendimiento y experiencia de usuario en aplicaciones web."
+    },
+];
 
     return (
         <div className="DevOps">
@@ -44,6 +67,7 @@ const DevOps = () => {
             <Slide direction="up" triggerOnce={false}>
                 <h1 className="Title-dev">Herramientas de Infraestructura y DevOps</h1>
             </Slide>
+            <Parraf/>
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container-dev">

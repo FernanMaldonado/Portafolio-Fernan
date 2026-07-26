@@ -14,6 +14,29 @@ const Frameworks = () => {
     const [animate, setAnimate] = useState(false);
     const ref = useRef(null);
 
+    const Parraf = () => {
+    return (
+        <div className="Parraf-container">
+            <p>
+                En mi desarrollo como programador he trabajado con diferentes frameworks 
+                que me permiten construir aplicaciones modernas, escalables y eficientes. 
+                A través de mi formación y proyectos he adquirido experiencia utilizando 
+                tecnologías como <strong>React</strong>, para la creación de interfaces web 
+                dinámicas basadas en componentes reutilizables; <strong>Node.js</strong>, 
+                para el desarrollo de servicios backend rápidos y orientados a la creación 
+                de APIs eficientes; <strong>.NET</strong>, enfocado en soluciones empresariales 
+                robustas y seguras; <strong>Spring Boot</strong>, utilizado para diseñar 
+                microservicios con arquitectura modular en el ecosistema Java; y 
+                <strong> React Native</strong>, para el desarrollo de aplicaciones móviles 
+                multiplataforma con alto rendimiento. Estos frameworks forman parte de las 
+                herramientas que utilizo para transformar ideas en soluciones tecnológicas 
+                funcionales, aplicando buenas prácticas de desarrollo, organización de código 
+                y arquitecturas preparadas para crecer según las necesidades del proyecto.
+            </p>
+        </div>
+    )
+};
+
     const dataFrameworks = [
         {
             id: 1,
@@ -44,12 +67,12 @@ const Frameworks = () => {
             description: "Desarrollo microservicios modulares y de despliegue rápido, garantizando mantenibilidad y escalabilidad en sistemas Java."
         },
         {
-            id: 5,
-            name: "React - Native",
-            img: ReactNative,
-            level: 75,
-            description: "Implemento aplicaciones móviles nativas multiplataforma desde un único código base, garantizando rendimiento y consistencia."
-        },
+    id: 5,
+    name: "React Native",
+    img: ReactNative,
+    level: 75,
+    description: "Implemento aplicaciones móviles multiplataforma desde un único código base, garantizando rendimiento, experiencia nativa y una interfaz consistente."
+}
     ];
 
     useEffect(() => {
@@ -86,6 +109,7 @@ const Frameworks = () => {
                     />
                 )}
             </div>
+            <Parraf/>
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container-fr">

@@ -23,29 +23,51 @@ const BataBaseRelationalAndNorRelationals = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    const Parraf = () => {
+    return (
+        <div className="Parraf-container">
+            <p>
+                En el desarrollo de aplicaciones he trabajado con diferentes sistemas de 
+                gestión de bases de datos que me permiten almacenar, organizar y administrar 
+                información de manera eficiente y segura. Cuento con experiencia utilizando 
+                <strong> MySQL</strong>, para el diseño de bases de datos relacionales, 
+                creación de estructuras optimizadas y gestión de información empresarial; 
+                <strong> PostgreSQL</strong>, aprovechando sus capacidades avanzadas para 
+                manejar transacciones, consultas complejas y sistemas que requieren mayor 
+                robustez; y <strong>MongoDB</strong>, orientado al manejo de bases de datos 
+                NoSQL con estructuras flexibles y escalables para aplicaciones modernas. 
+                Estas tecnologías forman parte de las herramientas que utilizo para diseñar 
+                soluciones basadas en datos, garantizando integridad, rendimiento y una 
+                correcta organización de la información dentro de cada proyecto.
+            </p>
+        </div>
+    )
+};
+
     const dataBases = [
-        {
-            id: 1,
-            name: "MySQL",
-            img: MySQL,
-            level: 85,
-            description: "Diseño esquemas relacionales sólidos para garantizar la integridad y consistencia en sistemas de gestión empresarial."
-        },
-        {
-            id: 2,
-            name: "PostgreSQL",
-            img: PostgreSQL,
-            level: 65,
-            description: "Implemento bases de datos avanzadas, utilizando características de extensibilidad y transacciones complejas para aplicaciones críticas."
-        },
-        {
-            id: 3,
-            name: "MongoDB",
-            img: MongoDB,
-            level: 85,
-            description: "Gestiono datos no estructurados con modelos flexibles, optimizando la escalabilidad y el rendimiento en aplicaciones de alto tráfico."
-        },
-    ];
+    {
+        id: 1,
+        name: "MySQL",
+        img: MySQL,
+        level: 85,
+        description: "Diseño y administro bases de datos relacionales, creando estructuras optimizadas, consultas eficientes y modelos enfocados en la integridad de la información."
+    },
+    {
+        id: 2,
+        name: "PostgreSQL",
+        img: PostgreSQL,
+        level: 65,
+        description: "Trabajo con bases de datos avanzadas mediante consultas complejas, manejo de transacciones y estructuras preparadas para sistemas escalables."
+    },
+    {
+        id: 3,
+        name: "MongoDB",
+        img: MongoDB,
+        level: 85,
+        description: "Gestiono bases de datos NoSQL con modelos flexibles, optimizando almacenamiento, escalabilidad y rendimiento para aplicaciones modernas."
+    },
+];
 
     return (
         <div className="DataBase">
@@ -62,6 +84,7 @@ const BataBaseRelationalAndNorRelationals = () => {
                     <span data-text="Especializadas">Especializadas</span>
                 </h1>
             </div>
+            <Parraf/>
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container-db">

@@ -10,41 +10,65 @@ import CSharp from "../../../assets/icons/CSharp.png";
 import SQL from "../../../assets/icons/SQL.png";
 
 const Lenguages = () => {
+
+    const Parraf = () => {
+        return (
+            <div className="Parraf-container">
+                <p>
+                    Durante mi formación como desarrollador he adquirido experiencia trabajando
+                    con diferentes lenguajes de programación que me permiten crear soluciones
+                    eficientes, escalables y adaptadas a distintos entornos tecnológicos.
+                    Manejo lenguajes como <strong>Java</strong>, aplicando programación orientada
+                    a objetos y buenas prácticas para el desarrollo de sistemas robustos;
+                    <strong> JavaScript</strong>, enfocado en la construcción de aplicaciones web
+                    modernas con lógica dinámica y programación asíncrona;
+                    <strong> Python</strong>, utilizado para automatización, desarrollo de
+                    soluciones backend y procesamiento eficiente de información;
+                    <strong> SQL</strong>, aplicado en el diseño, administración y optimización
+                    de bases de datos relacionales; y <strong>C#</strong>, trabajando con el
+                    ecosistema .NET para desarrollar aplicaciones empresariales seguras y
+                    estructuradas. Estos lenguajes forman parte de mi base técnica para
+                    desarrollar software profesional, aplicando principios de calidad,
+                    organización de código y soluciones orientadas a las necesidades del usuario.
+                </p>
+            </div>
+        )
+    };
     const dataLenguajes = [
         {
             id: 1,
             name: "Java",
             img: Java,
             level: 85,
-            description: "Especialista en desarrollo backend robusto y escalable, aplicando patrones de diseño para sistemas empresariales de alto rendimiento."
+            description: "Desarrollo aplicaciones orientadas a objetos, aplicando patrones de diseño y estructuras sólidas para crear sistemas escalables y mantenibles."
         },
         {
             id: 2,
             name: "JavaScript",
             img: JavaScript,
             level: 90,
-            description: "Dominio avanzado de ecosistemas web modernos (ES6+), enfocado en la creación de interfaces dinámicas y lógica asíncrona de alto impacto."
+            description: "Construyo aplicaciones web modernas utilizando programación dinámica, asincronía y tecnologías del ecosistema frontend y backend."
         },
         {
             id: 3,
             name: "Python",
             img: Python,
             level: 75,
-            description: "Enfoque en desarrollo de soluciones backend, automatización de procesos e integración de modelos, priorizando la eficiencia y legibilidad."
+            description: "Implemento soluciones mediante automatización, desarrollo backend y manejo eficiente de datos utilizando un código limpio y adaptable."
         },
         {
             id: 4,
             name: "SQL",
             img: SQL,
             level: 95,
-            description: "Experto en el diseño y optimización de bases de datos relacionales, garantizando la integridad de datos y consultas de alto rendimiento."
+            description: "Diseño y administro bases de datos relacionales, optimizando consultas, estructuras y gestión eficiente de información."
         },
         {
             id: 5,
             name: "C#",
             img: CSharp,
             level: 75,
-            description: "Sólida experiencia en arquitectura .NET para aplicaciones empresariales y desarrollo lógico, manteniendo estándares de calidad industrial."
+            description: "Desarrollo soluciones con el ecosistema .NET, aplicando arquitectura organizada y buenas prácticas para aplicaciones empresariales."
         },
     ];
 
@@ -72,7 +96,7 @@ const Lenguages = () => {
                     Lenguajes Capacitados
                 </motion.h1>
             </div>
-            <div><p>En esta seccion encontraran los lenguajes en los cuales me he capacitado y trabajado para diferentes proyectos dependiendo su funcion o fin de la App </p></div>
+            <Parraf />
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container">
