@@ -40,7 +40,7 @@
     left: 120%;
     top: 50%;
     transform: translateY(-50%);
-    background: #3f4852;
+    background: #71757993;
     color: white;
     padding: 10px 14px;
     border-radius: 6px;
@@ -60,13 +60,13 @@
     transform: translateY(-50%);
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-right: 6px solid #3f4852;
+    border-right: 6px solid #71757993;
 }
 
 .arquitecture:hover .tooltip {
     opacity: 1;
     visibility: visible;
-    left: 135%;
+    left: 150%;
 }
 
 .arquitecture:hover {
@@ -81,7 +81,7 @@
 .Options-Second {
     position: fixed;
     bottom: 0;
-    left: 40px;
+    left: 30px;
     transform: translateY(-50%);
     width: 55px;
     height: 55px;
@@ -97,9 +97,10 @@
     transform-style: preserve-3d;
     box-shadow: -10px 0px 20px rgb(0, 0, 0);
 }
- .OptionsList {
-        display: none;
-    }
+
+.OptionsList {
+    display: none;
+}
 
 @media (max-width: 850px) {
     .Options {
@@ -108,22 +109,49 @@
 
     .OptionsList {
         position: fixed;
-        top: 58%;
-        left: 26.5px;
-        transform: translateY(-50%);
-        width: 5rem;
-        height: auto;
+        top: 66%;
+        left: 22.5px;
         display: flex;
+        width: 4rem;
+        height: auto;
         flex-direction: column;
         justify-content: space-evenly;
-        padding: 10px 0;
-        background-color: rgba(5, 5, 17, 0.788);
-        border-radius: 50px;
+        padding: 7px 5px 0;
+        background-color: #fff;
+        border-radius: 50px 50px 0 0;
         z-index: 9999;
         box-sizing: border-box;
-        transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
         transform-style: preserve-3d;
-        box-shadow: -10px 0px 20px rgb(0, 0, 0);
+        box-shadow: -10px 0px 15px rgb(0, 0, 0);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-40%) scale(0.8);
+        transform-origin: bottom center;
+        transition: opacity .3s ease, transform .3s ease, visibility .3s;
+    }
+
+    .OptionsList.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) scale(1);
+    }
+
+    .OptionsList::after {
+        content: "";
+        position: absolute;
+        bottom: -29.5px;
+        left: 0;
+
+        width: 101%;
+        height: 30px;
+
+        background: #fff;
+
+        clip-path: polygon(0 0,
+                100% 0,
+                100% calc(100% - 27px),
+                52% 100%,
+                0 calc(100% - 27px));
     }
 
     .Options-Second {
@@ -139,5 +167,17 @@
         height: 40px;
         width: 40px;
         font-size: 2rem;
+    }
+
+    .icons {
+        font-size: 1.5rem;
+    }
+
+    .arquitecture {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 8px;
+        border: 2px solid white;
+        box-shadow: -5px -5px 7px rgb(0, 0, 0);
     }
 }

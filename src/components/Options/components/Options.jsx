@@ -22,7 +22,7 @@ const scrollTo = (id) => {
 const Options = () => {
     return (
         <div className="Options">
-            <div className="arquitecture" onClick={() => scrollTo("inicio")}>
+            <div className="arquitecture" onClick={() => scrollTo("about")}>
                 <HouseIcon
                     className="icons"
                     duration={1.5} />
@@ -81,7 +81,7 @@ const OptionsSecond = () => {
 const OptionsList = ({isOpen}) => {
     return (
         <div className={`OptionsList ${isOpen ? "open" : ""}`}>
-            <div className="arquitecture" onClick={() => scrollTo("inicio")}>
+            <div className="arquitecture" onClick={() => scrollTo("about")}>
                 <HouseIcon
                     className="icons"
                     duration={1.5} />
