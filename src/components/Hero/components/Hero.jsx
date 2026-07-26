@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
 import RubikCube from '../../Cube/RubikCube.jsx';
-import "../style/Hero.css"
+import { TypeAnimation } from "react-type-animation";
+import "../style/Hero.css";
 
 function Hero() {
+    const [animate, setAnimate] = useState(false);
+    const ref = useRef(null);
+
+    const phraseText = "Todo programador tiene un momento donde piensa en rendirse, un momento en el que el error parece imposible de resolver, donde las horas pasan y el avance no llega, donde la frustración pesa más que la motivación. Es normal, forma parte del camino de aprender algo complejo, pero también es en esos momentos donde se marca la diferencia, no entre quien nunca se equivoca y quien sí, sino entre quien se detiene y quien decide intentarlo una vez más. Muchas de las habilidades que hoy tienes nacieron de un momento en el que pensaste que no podías. La programación tiene algo curioso: casi todos quieren los resultados, pero pocos están dispuestos a soportar el proceso. Y es precisamente ese proceso lleno de errores, dudas y aprendizaje el que termina contruyendo a un ! Verdadero Programador ¡";
+
     const cubos = [
         { top: 55, left: 60, size: 2.2, rot: -25 },
         { top: 17, left: 60, size: 1.75, rot: -55 },
@@ -19,14 +26,69 @@ function Hero() {
         { top: -12, left: 20, size: 1.5, rot: -25 },
     ];
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setAnimate(entry.isIntersecting);
+            },
+            {
+                threshold: 0.5,
+            }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    // Función para hacer scroll suave hacia abajo
+    const scrollToNext = () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <section id="hero" className='Cuadro'>
             <div className='space'></div>
-            <div className='content'>
-                <h1>Hola, soy Fernando Maldonado</h1>
-                <p>Soy un desarrollador apasionado por transformar desafíos técnicos en soluciones digitales eficientes y escalables. Mi enfoque combina una sólida base en el desarrollo de software con la versatilidad necesaria para trabajar tanto en el backend, mediante la robustez de Java, como en interfaces dinámicas con JavaScript. Entiendo el código como una herramienta esencial para mejorar la experiencia del usuario y optimizar procesos, siempre bajo las mejores prácticas de desarrollo.</p>
-                <div className='BTN'>Conoceme</div>
+            <div className='contenth'>
+                <div ref={ref}>
+                    {animate && (
+                        <TypeAnimation
+                            sequence={[
+                                "Hola, Soy Fernando",
+                                2000,
+                            ]}
+                            speed={25}
+                            cursor
+                            repeat={0}
+                            className="Title-h"
+                        />
+                    )}
+                </div>
+
+                {animate && (
+                    <TypeAnimation
+                        sequence={[
+                            phraseText,
+                            2000,
+                        ]}
+                        speed={55}
+                        cursor
+                        repeat={0}
+                    />
+                )}
+
+                <div className='BTN' onClick={() => setIsOpen && setIsOpen(false)}>
+                    <Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        Conoceme
+                    </Link>
+                </div>
             </div>
+
             <div className="contenedor-disperso">
                 {cubos.map((c, i) => (
                     <div
@@ -42,8 +104,27 @@ function Hero() {
                     </div>
                 ))}
             </div>
+
+            {/* Botón de flecha hacia abajo para scroll automático */}
+            <div 
+                onClick={scrollToNext} 
+                style={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                    animation: 'bounce 2s infinite',
+                    color: 'white',
+                    fontSize: '24px'
+                }}
+                title="Bajar"
+            >
+                ↓
+            </div>
         </section>
     );
-}
+};
 
 export default Hero;
