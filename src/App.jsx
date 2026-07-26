@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/components/Navbar";
 import Hero from "./components/Hero/components/Hero";
@@ -20,9 +22,24 @@ import  Skills  from "./components/Habilities/components/Habilities.jsx"
 import  Contact from "./components/Contact/Contact.jsx"
 import "./App.css";
 
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+    }, [pathname]);
+
+    return null;
+}
+
+
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Navbar /> 
 
             <Routes>
