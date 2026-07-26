@@ -5,7 +5,7 @@
     width: 100%;
     min-height: 700px;
     background-color: #1C222D;
-    padding: 40px 20px;
+    padding: 150px 20px 40px 20px;
     box-sizing: border-box;
 }
 
@@ -96,21 +96,22 @@
     color: black;
 }
 
-.Title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #38BDF8;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.Title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
- @media (max-width: 1250px) {
-    .Title {
-        font-size: 3rem;
-         text-align: center;
-    }
+.Title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
 }
 
 .sub-title-fr {

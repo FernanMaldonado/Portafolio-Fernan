@@ -1,4 +1,5 @@
 import React from "react";
+import { Slide } from "react-awesome-reveal";
 import "../styles/DevOps.css";
 import Docker from "../../../assets/icons/Docker.png";
 import Git from "../../../assets/icons/Git.png";
@@ -11,28 +12,28 @@ const DevOps = () => {
             id: 1,
             name: "Docker",
             img: Docker,
-            level:75,
+            level: 75,
             description: "Contenerizo mis aplicaciones para garantizar entornos de desarrollo consistentes, facilitando su despliegue en cualquier servidor."
         },
         {
             id: 2,
             name: "Git",
             img: Git,
-            level:90,
+            level: 90,
             description: "Gestiono el control de versiones de mi código, permitiéndome un flujo de trabajo organizado y colaborativo en todos mis proyectos."
         },
         {
             id: 3,
             name: "Github",
             img: Github,
-            level:85,
+            level: 85,
             description: "Documento y almaceno mis repositorios, facilitando la integración continua y el trabajo en equipo con estándares de la industria."
         },
         {
             id: 4,
             name: "Cloudinary",
             img: Cloudinary,
-            level:75,
+            level: 75,
             description: "Optimizo y gestiono la entrega de activos multimedia, mejorando la velocidad de carga y la eficiencia de mis aplicaciones."
         },
     ];
@@ -40,7 +41,9 @@ const DevOps = () => {
     return (
         <div className="DevOps">
             {/* AQUÍ ESTÁ TU TÍTULO */}
-            <div className="Title-dev">Herramientas de Infraestructura y DevOps</div>
+            <Slide direction="up" triggerOnce={false}>
+                <h1 className="Title-dev">Herramientas de Infraestructura y DevOps</h1>
+            </Slide>
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}
             <div className="Cards-container-dev">

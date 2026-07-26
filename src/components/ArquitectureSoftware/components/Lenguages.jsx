@@ -1,6 +1,7 @@
 import React from "react";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { motion } from "framer-motion";
 import "../styles/Lenguages.css";
 import Python from "../../../assets/icons/Python.png";
 import Java from "../../../assets/icons/Java.png";
@@ -50,7 +51,27 @@ const Lenguages = () => {
     return (
         <div className="Lenguages">
             {/* AQUÍ ESTÁ TU TÍTULO */}
-            <div className="Title">Lenguajes Capacitados</div>
+            <div className="Title-container">
+                <motion.h1
+                    className="Title"
+                    initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)"
+                    }}
+                    viewport={{
+                        once: false,
+                        amount: 0.4
+                    }}
+                    transition={{
+                        duration: 0.8,
+                        ease: "easeOut"
+                    }}
+                >
+                    Lenguajes Capacitados
+                </motion.h1>
+            </div>
             <div><p>En esta seccion encontraran los lenguajes en los cuales me he capacitado y trabajado para diferentes proyectos dependiendo su funcion o fin de la App </p></div>
 
             {/* NUEVO CONTENEDOR SOLO PARA LAS CARTAS */}

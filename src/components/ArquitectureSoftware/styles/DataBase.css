@@ -1,16 +1,16 @@
 .DataBase {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     min-height: 700px;
     background-color: #0F172A;
-    padding: 40px 20px;
+    padding: 100px 20px 40px 20px;
     box-sizing: border-box;
 }
 
 .Cards-container-db {
-   display: flex;
+    display: flex;
     margin-top: 50px;
     gap: 40px;
     align-items: center;
@@ -46,7 +46,8 @@
     z-index: 10;
 }
 
-.Specify-front-db, .Specify-back-db {
+.Specify-front-db,
+.Specify-back-db {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -57,8 +58,8 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center;  
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -68,7 +69,7 @@
 
 
 .Specify-back-db {
-    background-color: #1E293B; 
+    background-color: #1E293B;
     color: white;
     transform: rotateY(180deg);
 }
@@ -86,9 +87,9 @@
 
 .inside-db {
     background-color: rgb(255, 255, 255);
-    width: calc(100% - 20px); 
+    width: calc(100% - 20px);
     border-radius: 25px;
-    margin: 15px auto 0 auto;        
+    margin: 15px auto 0 auto;
     height: auto;
     padding: 8px 0;
     font-weight: bold;
@@ -96,30 +97,105 @@
 }
 
 .Title-db {
-    font-size: 3rem; 
+    position: relative;
+    /* Faltaba */
+    display: inline-block;
+    /* Para que el ancho sea el del texto */
+    font-size: 3rem;
     font-weight: bold;
-    color: #E0E0E0; 
-    margin-bottom: 40px; 
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    white-space: nowrap;
 }
 
+.Title-db::before {
+    content: "Base de datos Especializadas";
+    position: absolute;
+    top: 0;
+    left: 0;
 
- @media (max-width: 1250px) {
+    width: 0;
+    height: 100%;
+
+    color: #00e7ff;
+    -webkit-text-stroke: 0;
+    border-right: 4px solid #00e7ff;
+    overflow: hidden;
+    white-space: nowrap;
+
+    transition: width 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Title-db.animate::before {
+    width: 100%;
+}
+
+.Title-db-Response {
+    display: none;
+}
+
+@media (max-width: 1250px) {
     .Title-db {
-        font-size: 2.5rem;
-         text-align: center;
+        display: none;
     }
+
+    .Title-db-Response {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        font-size: 3rem;
+        line-height: 1.1;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+
+    .Title-db-Response span {
+        position: relative;
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+        margin: 20px 0;
+    }
+
+    .Title-db-Response span::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+        color: #00e7ff;
+        -webkit-text-stroke: 0;
+        border-right: 4px solid #00e7ff;
+
+        transition: width .8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .Title-db-Response.animate span::before {
+    width: 100%;
 }
 
- .sub-title-db {
+
+}
+
+.sub-title-db {
     font-weight: bold;
     margin-bottom: 20px;
     font-size: 20px;
- }
+}
 
- .porcentage-db{
-    width: 100%; 
+.porcentage-db {
+    width: 100%;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -180,7 +256,7 @@
 }
 
 .particles {
-    position: absolute; 
+    position: absolute;
     width: 100%;
     height: 100%;
     pointer-events: none;
