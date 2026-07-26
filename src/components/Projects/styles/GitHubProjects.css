@@ -1,0 +1,365 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+.wrapper,
+.wrapper *,
+.wrapper *::before,
+.wrapper *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   CONTENEDOR (100% de la pantalla)
+========================================== */
+
+.github-projects {
+    width: 100%;
+    margin: 0;
+    padding: 80px 5%;
+    background: linear-gradient(135deg,#0f172a,#111827,#1e293b);
+    color: white;
+    overflow: hidden;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    text-align:center;
+    margin-bottom:60px;
+    margin-top: 50px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* ==========================================
+   STATS
+========================================== */
+
+.stats{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.stats div{
+    flex:1 1 180px;
+    max-width:220px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    transition:.35s;
+}
+
+.stats div:hover{
+    transform:translateY(-8px);
+}
+
+.stats h2{
+    color:#60a5fa;
+    font-size:2rem;
+}
+
+.stats span{
+    color:#d1d5db;
+}
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.filters{
+    margin:50px 0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.filters button{
+    padding:12px 24px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    color:white;
+    background:#1f2937;
+    transition:.3s;
+}
+
+.filters button:hover{
+    background:#2563eb;
+}
+
+.filters .active{
+    background:#3b82f6;
+}
+
+/* ==========================================
+   TECNOLOGÍAS
+========================================== */
+
+.tech-stack{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    font-size:2.2rem;
+    color:#60a5fa;
+    margin-bottom:50px;
+}
+
+.tech-stack svg{
+    transition:.3s;
+}
+
+.tech-stack svg:hover{
+    transform:scale(1.25);
+    color:#38bdf8;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.cardsf{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px; /* Evita que en pantallas gigantes las tarjetas se estiren demasiado */
+    margin: 0 auto;    /* Centra la cuadrícula perfectamente */
+}
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.cardf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08); /* Fondo translúcido original */
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: .35s;
+}
+
+.cardf:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.35);
+}
+
+.cardf.featured{
+    border: 2px solid #3b82f6;
+}
+
+/* ==========================================
+   IMAGEN / MEDIA
+========================================== */
+
+.media-container{
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.project-media{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+
+.cardf:hover .project-media{
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.contentf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.contentf h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+}
+
+.contentf p {
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tags span{
+    background:#2563eb;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:.85rem;
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.buttons a{
+    flex:1;
+    min-width:130px;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.buttons a:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
+
+.timeline{
+    margin-top:80px;
+}
+
+.timeline h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.line{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.line div{
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.line div:hover{
+    transform:translateY(-8px);
+}
+
+.line h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+}
+
+.line p{
+    color:#d1d5db;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+    .github-projects{
+        padding:50px 4%;
+    }
+    .hero h1{
+        font-size:2.5rem;
+    }
+}
+
+@media(max-width:768px){
+    .github-projects{
+        padding:35px 20px;
+    }
+    .hero {
+        margin-top: 100px;
+    }
+    .hero h1{
+        font-size:2rem;
+    }
+    .cardsf{
+        grid-template-columns:1fr;
+    }
+    .buttons{
+        flex-direction:column;
+    }
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+@media(max-width:480px){
+    .hero h1{
+        font-size:1.7rem;
+    }
+    .hero p{
+        font-size:.95rem;
+    }
+    .contentf{
+        padding:18px;
+    }
+    .tech-stack{
+        gap:18px;
+        font-size:1.8rem;
+    }
+}
