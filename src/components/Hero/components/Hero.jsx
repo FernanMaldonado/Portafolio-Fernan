@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import RubikCube from '../../Cube/RubikCube.jsx';
 import { TypeAnimation } from "react-type-animation";
+import {
+    FaInstagram,
+    FaThreads,
+    FaFacebook,
+    FaGithub,
+    FaLinkedin
+} from "react-icons/fa6";
 import "../style/Hero.css";
 
 function Hero() {
@@ -87,6 +94,59 @@ function Hero() {
                         Conoceme
                     </Link>
                 </div>
+
+                <div className="social-section">
+                    <span className="social-title">También puedes encontrarme en</span>
+
+                    <div className="social-icons">
+
+                        <a
+                            href="https://www.instagram.com/_fernan.1?igsh=MW9lMDE5c2RyaXhsdg=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon instagram"
+                        >
+                            <FaInstagram />
+                        </a>
+
+                        <a
+                            href="https://www.threads.com/@_fernan.1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon threads"
+                        >
+                            <FaThreads />
+                        </a>
+
+                        <a
+                            href="https://www.facebook.com/share/1HRByTEZZm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon facebook"
+                        >
+                            <FaFacebook />
+                        </a>
+
+                        <a
+                            href="https://github.com/FernanMaldonado"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon github"
+                        >
+                            <FaGithub />
+                        </a>
+
+                        <a
+                            href="http://www.linkedin.com/in/fernando-maldonado-23b670425"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon linkedin"
+                        >
+                            <FaLinkedin />
+                        </a>
+
+                    </div>
+                </div>
             </div>
 
             <div className="contenedor-disperso">
@@ -106,8 +166,8 @@ function Hero() {
             </div>
 
             {/* Botón de flecha hacia abajo para scroll automático */}
-            <div 
-                onClick={scrollToNext} 
+            <div
+                onClick={scrollToNext}
                 style={{
                     position: 'absolute',
                     bottom: '20px',

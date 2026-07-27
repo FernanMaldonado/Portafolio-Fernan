@@ -100,3 +100,74 @@
     z-index: 10;        /* Al pasar el mouse, el cubo se pone al frente */
     transform: scale(1.1);
 }
+
+/*=============================
+        REDES SOCIALES
+=============================*/
+
+.social-section{
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-title{
+    font-size: 1rem;
+    color: #d8d8d8;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.social-icon{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.55rem;
+    text-decoration: none;
+    transition: .35s;
+    backdrop-filter: blur(8px);
+}
+
+.social-icon:hover{
+    transform: translateY(-8px) scale(1.12);
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Colores */
+
+.instagram:hover{
+    background: linear-gradient(45deg,#f58529,#feda77,#dd2a7b,#8134af,#515bd4);
+    border-color: transparent;
+}
+
+.threads:hover{
+    background:#000;
+}
+
+.facebook:hover{
+    background:#1877F2;
+}
+
+.github:hover{
+    background:#24292e;
+}
+
+.linkedin:hover{
+    background:#0A66C2;
+}
