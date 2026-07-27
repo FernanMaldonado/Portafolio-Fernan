@@ -107,6 +107,13 @@
     -webkit-text-stroke: 2px #fff;
 }
 
+@media (max-width: 1250px) {
+    .Title-arq {
+        font-size: 2rem;
+    }
+
+}
+
  .sub-title-arq {
     font-weight: bold;
     margin-bottom: 20px;
