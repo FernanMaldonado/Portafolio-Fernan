@@ -300,3 +300,142 @@
     background: #574bdb;
     transform: translateY(-2px);
 }
+
+@media (max-width:1250px){
+
+    .Me{
+        min-height: auto;
+        padding: 100px 20px;
+    }
+
+    .Me img.Mee{
+        height: 450px;
+        margin-bottom: 40px;
+    }
+
+
+    /* Contenedor general de botones */
+    .floating-item{
+        position: relative;
+        top:auto!important;
+        left:auto!important;
+        right:auto!important;
+        width:100%;
+        margin:15px 0;
+        display:flex;
+        justify-content:center;
+    }
+
+
+    /* Ocultar ramas */
+    .subitems-wrapper{
+        position:relative;
+        top:auto;
+        left:auto;
+        right:auto;
+        width:100%;
+        height:auto;
+        display:none;
+        margin-top:15px;
+    }
+
+
+    /* Cuando está abierto */
+    .floating-item.active .subitems-wrapper{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+        animation:showMenu .4s ease;
+    }
+
+
+    /* Ocultar líneas */
+    .line-wrapper,
+    .line-fill{
+        display:none;
+    }
+
+
+    /* Botón principal */
+    .main-pill{
+        width:260px;
+        justify-content:center;
+        background:#020202ad;
+        color:white;
+        padding:15px;
+        font-size:16px;
+    }
+
+
+    /* Tarjetas debajo */
+    .subitem-box{
+        position:relative!important;
+        top:auto!important;
+        left:auto!important;
+        right:auto!important;
+
+        width:85%;
+        max-width:350px;
+
+        text-align:center;
+
+        opacity:1;
+        transform:none;
+
+        animation:none;
+
+        background:#003f7e;
+        color:white;
+
+        padding:14px;
+        border-radius:15px;
+    }
+
+
+
+    @keyframes showMenu{
+
+        from{
+            opacity:0;
+            transform:translateY(-20px);
+        }
+
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+    }
+
+     /* Imagen como fondo */
+    .Me img.Mee{
+        position: absolute;
+        height: 650px;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 0.25; /* transparencia para que no tape botones */
+        z-index: 0;
+
+        filter: blur(1px);
+    }
+
+    .info-modal-content{
+
+        width:280px;
+        padding:15px;
+
+    }
+
+
+    .modal-video{
+
+        width:190px;
+
+    }
+
+
+}

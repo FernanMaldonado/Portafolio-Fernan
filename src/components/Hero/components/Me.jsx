@@ -166,9 +166,7 @@ const Me = () => {
                 const isOpen = activeSection === item.id;
                 return (
                     <div
-
-                        key={item.id}
-                        className={`floating-item ${item.positionClass} ${isOpen ? 'active' : ''}`}
+                        className={`floating-item ${item.positionClass} ${activeSection === item.id ? "active" : ""}`}
                     >
 
 
